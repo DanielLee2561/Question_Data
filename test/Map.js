@@ -42,3 +42,9 @@ function foo_tests()
   tests.push(new test("foo(2, [-1, 3, 6]) should equal [1, 5, 8]", "chai.expect(foo(2, [-1, 3, 6])).to.eql([1, 5, 8]);"));
   return tests;
 }
+
+function foo_question()
+{
+	let id = 6;
+	return new question(id, foo.toString(), foo_tests());
+}

@@ -12,4 +12,5 @@ describe('JSON Test', () => {
 describe('JSON', () => {
 	it(JSON.stringify(foo.toString()), () => {});
 	it(JSON.stringify(foo_tests()), () => {});
+	it(JSON.stringify(foo_question()), () => {});
 });

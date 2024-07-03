@@ -52,3 +52,9 @@ function foo_tests()
   tests.push(new test("foo(6) should equal 8", "chai.expect(foo(6)).to.eql(8);"));
   return tests;
 }
+
+function foo_question()
+{
+	let id = 5;
+	return new question(id, foo.toString(), foo_tests());
+}
