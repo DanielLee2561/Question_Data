@@ -1,0 +1,122 @@
+{
+    "questions": [
+        {
+            "id": 4,
+            "code": "function foo(n)\r\n{\r\n if (n < 0) {\r\n return -1;\r\n } else if (n == 0) {\r\n return 1;\r\n } else {\r\n return n * foo(n - 1);\r\n }\r\n}",
+            "tests": [
+                {
+                    "title": "foo(-2) should equal -1",
+                    "assertion": "chai.expect(foo(-2)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(-1) should equal -1",
+                    "assertion": "chai.expect(foo(-1)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(0) should equal 1",
+                    "assertion": "chai.expect(foo(0)).to.eql(1);"
+                },
+                {
+                    "title": "foo(1) should equal 1",
+                    "assertion": "chai.expect(foo(1)).to.eql(1);"
+                },
+                {
+                    "title": "foo(2) should equal 2",
+                    "assertion": "chai.expect(foo(2)).to.eql(2);"
+                },
+                {
+                    "title": "foo(3) should equal 6",
+                    "assertion": "chai.expect(foo(3)).to.eql(6);"
+                },
+                {
+                    "title": "foo(4) should equal 24",
+                    "assertion": "chai.expect(foo(4)).to.eql(24);"
+                },
+                {
+                    "title": "foo(5) should equal 120",
+                    "assertion": "chai.expect(foo(5)).to.eql(120);"
+                },
+                {
+                    "title": "foo(6) should equal 720",
+                    "assertion": "chai.expect(foo(6)).to.eql(720);"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "code": "function foo(n)\r\n{\r\n if (n < 0) {\r\n return -1;\r\n } else if (n == 0) {\r\n return 0;\r\n } else if (n == 1) {\r\n return 1;\r\n } else {\r\n return foo(n - 1) + foo(n - 2);\r\n }\r\n}",
+            "tests": [
+                {
+                    "title": "foo(-2) should equal -1",
+                    "assertion": "chai.expect(foo(-2)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(-1) should equal -1",
+                    "assertion": "chai.expect(foo(-1)).to.eql(-1);"
+                },
+                {
+                    "title": "foo(0) should equal 0",
+                    "assertion": "chai.expect(foo(0)).to.eql(0);"
+                },
+                {
+                    "title": "foo(1) should equal 1",
+                    "assertion": "chai.expect(foo(1)).to.eql(1);"
+                },
+                {
+                    "title": "foo(2) should equal 1",
+                    "assertion": "chai.expect(foo(2)).to.eql(1);"
+                },
+                {
+                    "title": "foo(3) should equal 2",
+                    "assertion": "chai.expect(foo(3)).to.eql(2);"
+                },
+                {
+                    "title": "foo(4) should equal 3",
+                    "assertion": "chai.expect(foo(4)).to.eql(3);"
+                },
+                {
+                    "title": "foo(5) should equal 5",
+                    "assertion": "chai.expect(foo(5)).to.eql(5);"
+                },
+                {
+                    "title": "foo(6) should equal 8",
+                    "assertion": "chai.expect(foo(6)).to.eql(8);"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "code": "function foo(n, m)\r\n{\r\n let m_copy = new Array(m.length);\r\n for (let o = 0; o < m.length; o++) {\r\n m_copy[o] = m[o] + n;\r\n }\r\n return m_copy;\r\n}",
+            "tests": [
+                {
+                    "title": "foo(1, []) should equal []",
+                    "assertion": "chai.expect(foo(1, [])).to.eql([]);"
+                },
+                {
+                    "title": "foo(0, [6]) should equal [6]",
+                    "assertion": "chai.expect(foo(0, [6])).to.eql([6]);"
+                },
+                {
+                    "title": "foo(1, [6]) should equal [7]",
+                    "assertion": "chai.expect(foo(1, [6])).to.eql([7]);"
+                },
+                {
+                    "title": "foo(2, [6]) should equal [8]",
+                    "assertion": "chai.expect(foo(2, [6])).to.eql([8]);"
+                },
+                {
+                    "title": "foo(0, [-1, 3, 6]) should equal [-1, 3, 6]",
+                    "assertion": "chai.expect(foo(0, [-1, 3, 6])).to.eql([-1, 3, 6]);"
+                },
+                {
+                    "title": "foo(1, [-1, 3, 6]) should equal [0, 4, 7]",
+                    "assertion": "chai.expect(foo(1, [-1, 3, 6])).to.eql([0, 4, 7]);"
+                },
+                {
+                    "title": "foo(2, [-1, 3, 6]) should equal [1, 5, 8]",
+                    "assertion": "chai.expect(foo(2, [-1, 3, 6])).to.eql([1, 5, 8]);"
+                }
+            ]
+        }
+    ]
+}
